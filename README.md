@@ -1,5 +1,6 @@
 # GPAK-Extractor
-Extract and Pack files for the gpak extension for The End Is Nigh
+
+Extract and Pack files for the gpak extension for Mewgenics and The End Is Nigh
 
 Just drag and drop the game.gpak onto the EXE and it will create a new folder called "Output" in the same directory with all the extracted files.
 
