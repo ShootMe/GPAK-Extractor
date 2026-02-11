@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -75,7 +75,7 @@ namespace GPAK_Extractor {
 			}
 		}
 		private void ReadFile() {
-			int position = 0;
+			long position = 0;
 			using (FileStream file = new FileStream(FilePath, FileMode.Open)) {
 				Count = ReadInt(file);
 
@@ -88,7 +88,7 @@ namespace GPAK_Extractor {
 					Entries.Add(newEntry);
 				}
 
-				position = (int)file.Position;
+				position = file.Position;
 				file.Close();
 			}
 
@@ -151,7 +151,7 @@ namespace GPAK_Extractor {
 	public class Entry {
 		public string Path { get; set; }
 		public int Length { get; set; }
-		public int Offset { get; set; }
+		public long Offset { get; set; }
 
 		public byte[] Read(string filePath) {
 			byte[] data = new byte[Length];
